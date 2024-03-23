@@ -4,17 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
-  selector: 'app-find-places',
+  selector: 'app-places',
   templateUrl: './find-places.page.html',
   styleUrls: ['./find-places.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule],
 })
-export class FindPlacesPage implements OnInit {
+export class PlacesPage implements OnInit {
+  places: string[] = ['Brunei', 'Tutong', 'Belait', 'Temburong'];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
