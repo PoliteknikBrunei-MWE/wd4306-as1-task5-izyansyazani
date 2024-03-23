@@ -1,45 +1,56 @@
 import { Routes } from '@angular/router';
+import { TabsPage } from './tabs/tabs.page';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full',
   },
   {
     path: 'auth',
-    loadComponent: () => import('./auth/auth.page').then( m => m.AuthPage)
+    loadComponent: () => import('./auth/auth.page').then((m) => m.AuthPage),
   },
+  // {
+  //   path: 'places',
+  //   loadComponent: () =>
+  //     import('./places/places.page').then((m) => m.PlacesPage),
+  // },
   {
-    path: 'find-places',
-    loadComponent: () => import('./find-places/find-places.page').then( m => m.FindPlacesPage)
-  },
-  {
-    path: 'place-details',
-    loadComponent: () => import('./place-details/place-details.page').then( m => m.PlaceDetailsPage)
+    path: 'place-detail',
+    loadComponent: () =>
+      import('./find-places/place-details/place-details.page').then(
+        (m) => m.PlaceDetailsPage
+      ),
   },
   {
     path: 'offers',
-    loadComponent: () => import('./offers/offers.page').then( m => m.OffersPage)
-  },
-  {
-    path: 'offer-details',
-    loadComponent: () => import('./offer-details/offer-details.page').then( m => m.OfferDetailsPage)
-  },
-  {
-    path: 'new-offer',
-    loadComponent: () => import('./new-offer/new-offer.page').then( m => m.NewOfferPage)
-  },
-  {
-    path: 'bookings',
-    loadComponent: () => import('./bookings/bookings.page').then( m => m.BookingsPage)
+    loadComponent: () =>
+      import('./offers/offers.page').then((m) => m.OffersPage),
   },
   {
     path: 'tabs',
-    loadComponent: () => import('./tabs/tabs.page').then( m => m.TabsPage)
+    component: TabsPage,
+    children: [
+      {
+        path: 'places',
+        loadComponent: () =>
+          import('./find-places/find-places.page').then((m) => m.PlacesPage),
+      },
+      {
+        path: 'offers',
+        loadComponent: () =>
+          import('./offers/offers.page').then((m) => m.OffersPage),
+      },
+    ],
+  },
+  {
+    path: 'places',
+    redirectTo: '/tabs/places',
+    pathMatch: 'full',
+  },
+  {
+    path: 'tabs',
+    loadComponent: () => import('./tabs/tabs.page').then((m) => m.TabsPage),
   },
 ];
