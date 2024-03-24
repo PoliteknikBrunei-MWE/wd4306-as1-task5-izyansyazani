@@ -1,5 +1,9 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
+import { AuthPage } from './auth/auth.page';
+import { PlaceDetailsPage } from './place-details/place-details.page';
+import { OffersPage } from './offers/offers.page';
+import { PlacesPage } from './find-places/find-places.page';
 
 export const routes: Routes = [
   {
@@ -9,24 +13,15 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadComponent: () => import('./auth/auth.page').then((m) => m.AuthPage),
+    component: AuthPage,
   },
-  // {
-  //   path: 'places',
-  //   loadComponent: () =>
-  //     import('./places/places.page').then((m) => m.PlacesPage),
-  // },
   {
     path: 'place-detail',
-    loadComponent: () =>
-      import('./find-places/place-details/place-details.page').then(
-        (m) => m.PlaceDetailsPage
-      ),
+    component: PlaceDetailsPage,
   },
   {
     path: 'offers',
-    loadComponent: () =>
-      import('./offers/offers.page').then((m) => m.OffersPage),
+    component: OffersPage,
   },
   {
     path: 'tabs',
@@ -34,13 +29,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'places',
-        loadComponent: () =>
-          import('./find-places/find-places.page').then((m) => m.PlacesPage),
+        component: PlacesPage,
       },
       {
         path: 'offers',
-        loadComponent: () =>
-          import('./offers/offers.page').then((m) => m.OffersPage),
+        component: OffersPage,
       },
     ],
   },
@@ -51,6 +44,6 @@ export const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadComponent: () => import('./tabs/tabs.page').then((m) => m.TabsPage),
+    component: TabsPage,
   },
 ];
