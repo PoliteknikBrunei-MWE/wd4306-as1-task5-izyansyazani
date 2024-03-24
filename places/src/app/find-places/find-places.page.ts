@@ -23,4 +23,8 @@ export class PlacesPage implements OnInit {
       this.router.navigate(['/place-detail']);
     }
   }
+
+  navigateToOffers() {
+    this.router.navigate(['/offers']);
+  }
 }
