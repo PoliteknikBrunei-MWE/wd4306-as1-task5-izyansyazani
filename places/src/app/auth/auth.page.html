@@ -17,12 +17,14 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input type="email" label="Email"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="password" label="Password"></ion-input>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
       </ion-item>
-      <ion-button expand="full" color="primary" [routerLink]="['/find-places']"
+      <ion-button expand="full" color="primary" routerLink="/tabs/places"
         >Login</ion-button
       >
     </ion-card-content>
