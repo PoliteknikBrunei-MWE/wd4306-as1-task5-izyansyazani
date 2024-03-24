@@ -19,4 +19,10 @@ export class AuthPage implements OnInit {
   login() {
     this.router.navigate(['find-places']);
   }
+
+  navigateToPlace(place: string) {
+    if (place === 'Brunei Muara') {
+      this.router.navigate(['/place-details']);
+    }
+  }
 }

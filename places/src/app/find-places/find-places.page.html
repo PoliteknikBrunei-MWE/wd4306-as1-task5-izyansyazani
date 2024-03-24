@@ -14,9 +14,19 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-list>
-    <ion-item *ngFor="let place of places">
-      <ion-label>{{ place }}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-button (click)="navigateToPlace('Brunei Muara')" expand="full">
+    <ion-label>Brunei Muara</ion-label>
+  </ion-button>
+
+  <ion-button expand="full">
+    <ion-label>Tutong</ion-label>
+  </ion-button>
+
+  <ion-button expand="full">
+    <ion-label>Belait</ion-label>
+  </ion-button>
+
+  <ion-button expand="full">
+    <ion-label>Temburong</ion-label>
+  </ion-button>
 </ion-content>

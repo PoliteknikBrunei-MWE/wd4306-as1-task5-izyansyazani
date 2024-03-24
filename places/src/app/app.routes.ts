@@ -45,15 +45,5 @@ export const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
-    children: [
-      {
-        path: 'places',
-        component: PlacesPage,
-      },
-      {
-        path: 'offers',
-        component: OffersPage,
-      },
-    ],
   },
 ];

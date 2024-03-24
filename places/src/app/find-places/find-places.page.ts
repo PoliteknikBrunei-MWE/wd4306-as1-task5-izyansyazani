@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -12,7 +13,14 @@ import { IonicModule } from '@ionic/angular';
 })
 export class PlacesPage implements OnInit {
   places: string[] = ['Brunei', 'Tutong', 'Belait', 'Temburong'];
-  constructor() {}
+
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  navigateToPlace(place: string) {
+    if (place === 'Brunei Muara') {
+      this.router.navigate(['/place-detail']);
+    }
+  }
 }
