@@ -17,6 +17,6 @@ export class AuthPage implements OnInit {
   ngOnInit() {}
 
   login() {
-    this.router.navigate(['']);
+    this.router.navigate(['find-places']);
   }
 }
