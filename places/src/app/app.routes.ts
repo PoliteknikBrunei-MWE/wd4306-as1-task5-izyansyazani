@@ -4,6 +4,9 @@ import { AuthPage } from './auth/auth.page';
 import { PlaceDetailsPage } from './place-details/place-details.page';
 import { OffersPage } from './offers/offers.page';
 import { PlacesPage } from './find-places/find-places.page';
+import { BookingsPage } from './bookings/bookings.page';
+import { NewOfferPage } from './new-offer/new-offer.page';
+import { OfferDetailsPage } from './offer-details/offer-details.page';
 
 export const routes: Routes = [
   {
@@ -16,12 +19,28 @@ export const routes: Routes = [
     component: AuthPage,
   },
   {
-    path: 'place-detail',
-    component: PlaceDetailsPage,
+    path: 'bookings',
+    component: BookingsPage,
+  },
+  {
+    path: 'find-places',
+    component: PlacesPage,
+  },
+  {
+    path: 'new-offer',
+    component: NewOfferPage,
+  },
+  {
+    path: 'offer-details',
+    component: OfferDetailsPage,
   },
   {
     path: 'offers',
     component: OffersPage,
+  },
+  {
+    path: 'place-detail',
+    component: PlaceDetailsPage,
   },
   {
     path: 'tabs',
@@ -36,14 +55,5 @@ export const routes: Routes = [
         component: OffersPage,
       },
     ],
-  },
-  {
-    path: 'places',
-    redirectTo: '/tabs/places',
-    pathMatch: 'full',
-  },
-  {
-    path: 'tabs',
-    component: TabsPage,
   },
 ];
