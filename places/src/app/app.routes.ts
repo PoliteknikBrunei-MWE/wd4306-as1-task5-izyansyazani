@@ -31,7 +31,7 @@ export const routes: Routes = [
     component: NewOfferPage,
   },
   {
-    path: 'offer-details',
+    path: 'offer-details/:id',
     component: OfferDetailsPage,
   },
   {

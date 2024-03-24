@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -8,13 +9,14 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './offers.page.html',
   styleUrls: ['./offers.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule],
 })
 export class OffersPage implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goToOfferDetails(offerId: number) {
+    this.router.navigate(['/offer-details', offerId]);
   }
-
 }
